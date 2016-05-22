@@ -840,11 +840,10 @@ class SeasonEpisode(object):
         """
         season_episode = cls()
 
-        season_episode.season = dct.pop("season")
-
-        season_episode.episode = dct.pop("episode")
-
-        if len(dct) != 0:
+        if len(dct) != 0 and "season" in dct:
+            season_episode.season = dct.pop("season")
+            season_episode.episode = dct.pop("episode")
+        else:
             logging.warn("Key(s) not processed for SeasonEpisode: %s", ", ".join(dct.keys()))
 
         return season_episode
