@@ -60,3 +60,6 @@ target/
 *.db
 xmltv.xml
 xmltv.xml.gz
+.project
+.pydevproject
+.settings/org.eclipse.core.resources.prefs
